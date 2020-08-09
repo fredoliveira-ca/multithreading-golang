@@ -11,7 +11,7 @@ func (v1 Vector2D) Add(v2 Vector2D) Vector2D {
 	return Vector2D{v1.x + v2.x, v1.y + v2.y}
 }
 
-func (v1 Vector2D) Subtraction(v2 Vector2D) Vector2D {
+func (v1 Vector2D) Subtract(v2 Vector2D) Vector2D {
 	return Vector2D{v1.x - v2.x, v1.y - v2.y}
 }
 
@@ -27,15 +27,13 @@ func (v1 Vector2D) MultiplyV(d float64) Vector2D {
 	return Vector2D{v1.x * d, v1.y * d}
 }
 
-func (v1 Vector2D) DivisionV(d float64) Vector2D {
+func (v1 Vector2D) DivideV(d float64) Vector2D {
 	return Vector2D{v1.x / d, v1.y / d}
 }
 
 func (v1 Vector2D) limit(lower, upper float64) Vector2D {
-	return Vector2D{
-		math.Min(math.Max(v1.x, lower), lower),
-		math.Min(math.Max(v1.y, lower), upper),
-	}
+	return Vector2D{math.Min(math.Max(v1.x, lower), upper),
+		math.Min(math.Max(v1.y, lower), upper)}
 }
 
 func (v1 Vector2D) Distance(v2 Vector2D) float64 {
