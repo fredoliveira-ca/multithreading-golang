@@ -33,7 +33,7 @@ func fileSearch(root, fileName string) {
 
 func main() {
 	waitgroup.Add(1)
-	go fileSearch("/home/s2it_faquino/", "notas_tecnicas.md")
+	go fileSearch("/home/", "notas_tecnicas.md")
 	waitgroup.Wait()
 	for _, file := range matches {
 		fmt.Println("Matched", file)
